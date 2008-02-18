@@ -24,9 +24,9 @@
 
 #include <kis_paint_device.h>
 
-KisCTLBrush::KisCTLBrush(const OpenCTL::Function* f) : KisBrush(""), m_function(f)
+KisCTLBrush::KisCTLBrush(int width, int height, const OpenCTL::Function* f) : KisBrush(""), m_function(f)
 {
-  QImage img(10,10, QImage::Format_RGB32);
+  QImage img( width, height, QImage::Format_RGB32);
   setImage(img);
   setBrushType(MASK);
 }

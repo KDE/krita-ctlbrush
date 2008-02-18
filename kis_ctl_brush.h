@@ -27,7 +27,7 @@ namespace OpenCTL {
 class KisCTLBrush : public KisBrush
 {
   public:
-    KisCTLBrush(const OpenCTL::Function* );
+    KisCTLBrush(int width, int height, const OpenCTL::Function* );
     virtual ~KisCTLBrush();
   public:
     virtual void generateMask(KisPaintDeviceSP dst, KisBrush::ColoringInformation* src, double scaleX, double scaleY, double angle, const KisPaintInformation& info = KisPaintInformation(), double subPixelX = 0, double subPixelY = 0) const;

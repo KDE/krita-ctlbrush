@@ -56,7 +56,7 @@ void CTLBrushDock::slotCreateBrush()
     dbgPlugins << "no function valueAt";
     return;
   }
-  emit(activatedResource(new KisCTLBrush(function)));
+  emit(activatedResource(new KisCTLBrush( m_ctlBrushEditor->width->value(),m_ctlBrushEditor->height->value(),  function)));
 }
 
 #include "ctlbrush_dock.moc"
