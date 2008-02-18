@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=CTLBrush
+Name[pt_BR]=%{NOME_APLICATIVO}
+Name[x-test]=xxCTLBrushxx
+Comment=CTLBrush
+Comment[pt_BR]=%{NOME_APLICATIVO}
+Comment[x-test]=xxCTLBrushxx
+ServiceTypes=Krita/ViewPlugin
+Type=Service
+X-KDE-Library=kritactlbrush
+X-Krita-Version=3
