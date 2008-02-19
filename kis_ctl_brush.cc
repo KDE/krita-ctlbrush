@@ -20,7 +20,7 @@
 #include <KoColorSpace.h>
 
 #include <OpenCTL/Function.h>
-#include <OpenCTL/Variable.h>
+#include <OpenCTL/Value.h>
 
 #include <kis_paint_device.h>
 
@@ -53,12 +53,12 @@ void KisCTLBrush::generateMask(KisPaintDeviceSP dst, KisBrush::ColoringInformati
   {
     while(! hiter.isDone())
     {
-      std::vector<OpenCTL::Variable> params;
-      params.push_back( OpenCTL::Variable( hiter.x() ) );
-      params.push_back( OpenCTL::Variable( y ) );
-      params.push_back( OpenCTL::Variable( dstWidth ) );
-      params.push_back( OpenCTL::Variable( dstHeight ) );
-      OpenCTL::Variable v = m_function->call( params );
+      std::vector<OpenCTL::Value> params;
+      params.push_back( OpenCTL::Value( hiter.x() ) );
+      params.push_back( OpenCTL::Value( y ) );
+      params.push_back( OpenCTL::Value( dstWidth ) );
+      params.push_back( OpenCTL::Value( dstHeight ) );
+      OpenCTL::Value v = m_function->call( params );
             
       cs->setAlpha( hiter.rawData(), v.asInt(), 1 );
       ++hiter;
