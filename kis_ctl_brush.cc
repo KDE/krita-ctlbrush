@@ -38,28 +38,31 @@ void KisCTLBrush::generateMask(KisPaintDeviceSP dst, KisBrush::ColoringInformati
 {
   dbgPlugins << "start generating mask";
   Q_UNUSED(info);
+  Q_UNUSED(subPixelX);
+  Q_UNUSED(subPixelY);
 
     // Generate the paint device from the mask
   const KoColorSpace* cs = dst->colorSpace();
-  quint32 pixelSize = cs->pixelSize();
     
   int dstWidth = maskWidth(scaleX, angle);
   int dstHeight = maskHeight(scaleY, angle);
     
     // Apply the alpha mask
     
+  std::vector<OpenCTL::Value> params;
+  params.push_back( OpenCTL::Value( 0 ) );
+  params.push_back( OpenCTL::Value( 0 ) );
+  params.push_back( OpenCTL::Value( dstWidth ) );
+  params.push_back( OpenCTL::Value( dstHeight ) );
   KisHLineIteratorPixel hiter = dst->createHLineIterator(0, 0, dstWidth);
   for (int y = 0; y < dstHeight; y++)
   {
+    params[1].setInt(y);
     while(! hiter.isDone())
     {
-      std::vector<OpenCTL::Value> params;
-      params.push_back( OpenCTL::Value( hiter.x() ) );
-      params.push_back( OpenCTL::Value( y ) );
-      params.push_back( OpenCTL::Value( dstWidth ) );
-      params.push_back( OpenCTL::Value( dstHeight ) );
+      params[0].setInt( hiter.x() );
       OpenCTL::Value v = m_function->call( params );
-            
+      
       cs->setAlpha( hiter.rawData(), v.asInt(), 1 );
       ++hiter;
     }
