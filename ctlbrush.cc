@@ -57,6 +57,10 @@ public:
     {
         return Qt::RightDockWidgetArea;
     }
+    virtual DockPosition defaultDockPosition() const
+    {
+        return KoDockFactory::DockMinimized;
+    }
 
     virtual QDockWidget* createDockWidget()
     {

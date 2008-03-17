@@ -20,7 +20,7 @@
 #include <KoColorSpace.h>
 
 #include <OpenCTL/Function.h>
-#include <OpenCTL/Value.h>
+#include <GTLCore/Value.h>
 
 #include <kis_paint_device.h>
 
@@ -49,21 +49,21 @@ void KisCTLBrush::generateMask(KisPaintDeviceSP dst, KisBrush::ColoringInformati
     
     // Apply the alpha mask
     
-  std::vector<OpenCTL::Value> params;
-  params.push_back( OpenCTL::Value( 0 ) );
-  params.push_back( OpenCTL::Value( 0 ) );
-  params.push_back( OpenCTL::Value( dstWidth ) );
-  params.push_back( OpenCTL::Value( dstHeight ) );
+  std::vector<GTLCore::Value> params;
+  params.push_back( GTLCore::Value( 0 ) );
+  params.push_back( GTLCore::Value( 0 ) );
+  params.push_back( GTLCore::Value( dstWidth ) );
+  params.push_back( GTLCore::Value( dstHeight ) );
   KisHLineIteratorPixel hiter = dst->createHLineIterator(0, 0, dstWidth);
   for (int y = 0; y < dstHeight; y++)
   {
-    params[1].setInt(y);
+    params[1].setInt32(y);
     while(! hiter.isDone())
     {
-      params[0].setInt( hiter.x() );
-      OpenCTL::Value v = m_function->call( params );
+      params[0].setInt32( hiter.x() );
+      GTLCore::Value v = m_function->call( params );
       
-      cs->setAlpha( hiter.rawData(), v.asInt(), 1 );
+      cs->setAlpha( hiter.rawData(), v.asInt32(), 1 );
       ++hiter;
     }
     if(src) src->nextRow();
