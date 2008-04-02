@@ -19,7 +19,7 @@
 
 
 #include <kis_view2.h>
-#include "kis_resource_provider.h"
+#include "kis_canvas_resource_provider.h"
 
 #include <QLabel>
 
@@ -47,7 +47,7 @@ void CTLBrushDock::slotCreateBrush()
   m_module->compile();
   if( not m_module->isCompiled() )
   {
-    dbgPlugins << m_module->compilationError().c_str();
+//     dbgPlugins << m_module->compilationError().c_str();
     return;
   }
   const OpenCTL::Function* function = m_module->function("valueAt");
