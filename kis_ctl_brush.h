@@ -20,14 +20,14 @@
 
 #include "kis_brush.h"
 
-namespace OpenCTL {
+namespace GTLCore {
   class Function;
 };
 
 class KisCTLBrush : public KisBrush
 {
   public:
-    KisCTLBrush(int width, int height, const OpenCTL::Function* );
+    KisCTLBrush(int width, int height, const GTLCore::Function* );
     virtual ~KisCTLBrush();
   public:
     virtual void generateMask(KisPaintDeviceSP dst, KisBrush::ColoringInformation* src, double scaleX, double scaleY, double angle, const KisPaintInformation& info = KisPaintInformation(), double subPixelX = 0, double subPixelY = 0) const;
@@ -35,7 +35,7 @@ class KisCTLBrush : public KisBrush
     virtual bool load() { return false; }
     virtual void toXML(QDomDocument& , QDomElement&) const;
   private:
-    const OpenCTL::Function* m_function;
+    const GTLCore::Function* m_function;
 };
 
 #endif

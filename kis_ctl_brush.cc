@@ -19,12 +19,12 @@
 
 #include <KoColorSpace.h>
 
-#include <OpenCTL/Function.h>
+#include <GTLCore/Function.h>
 #include <GTLCore/Value.h>
 
 #include <kis_paint_device.h>
 
-KisCTLBrush::KisCTLBrush(int width, int height, const OpenCTL::Function* f) : KisBrush(""), m_function(f)
+KisCTLBrush::KisCTLBrush(int width, int height, const GTLCore::Function* f) : KisBrush(""), m_function(f)
 {
   QImage img( width, height, QImage::Format_RGB32);
   setImage(img);

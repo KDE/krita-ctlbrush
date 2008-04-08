@@ -50,7 +50,7 @@ void CTLBrushDock::slotCreateBrush()
 //     dbgPlugins << m_module->compilationError().c_str();
     return;
   }
-  const OpenCTL::Function* function = m_module->function("valueAt");
+  const GTLCore::Function* function = m_module->function("valueAt");
   if(not function)
   {
     dbgPlugins << "no function valueAt";
