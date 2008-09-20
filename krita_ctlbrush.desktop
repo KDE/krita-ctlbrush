@@ -1,10 +1,15 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=CTLBrush
-Name[pt_BR]=%{NOME_APLICATIVO}
+Name[et]=CTL pintsel
+Name[hi]=सीटीएलब्रुश
+Name[sv]=CTL-pensel
 Name[x-test]=xxCTLBrushxx
 Comment=CTLBrush
-Comment[pt_BR]=%{NOME_APLICATIVO}
+Comment[et]=CTL pintsel
+Comment[gl]=Control do pincel
+Comment[hi]=सीटीएलब्रुश
+Comment[sv]=CTL-pensel
 Comment[x-test]=xxCTLBrushxx
 ServiceTypes=Krita/ViewPlugin
 Type=Service
