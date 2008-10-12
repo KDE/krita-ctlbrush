@@ -1,11 +1,13 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=CTLBrush
+Name[es]=BrochaCTL
 Name[et]=CTL pintsel
 Name[hi]=सीटीएलब्रुश
 Name[sv]=CTL-pensel
 Name[x-test]=xxCTLBrushxx
 Comment=CTLBrush
+Comment[es]=BrochaCTL
 Comment[et]=CTL pintsel
 Comment[gl]=Control do pincel
 Comment[hi]=सीटीएलब्रुश
