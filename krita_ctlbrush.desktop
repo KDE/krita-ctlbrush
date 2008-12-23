@@ -13,6 +13,7 @@ Comment[et]=CTL pintsel
 Comment[gl]=Control do pincel
 Comment[hi]=सीटीएलब्रुश
 Comment[nds]=CTL-Pinsel
+Comment[nl]=CTL-penseel
 Comment[sv]=CTL-pensel
 Comment[x-test]=xxCTLBrushxx
 ServiceTypes=Krita/ViewPlugin
