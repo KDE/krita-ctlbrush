@@ -15,6 +15,7 @@ Comment[hi]=सीटीएलब्रुश
 Comment[nds]=CTL-Pinsel
 Comment[nl]=CTL-penseel
 Comment[sv]=CTL-pensel
+Comment[tr]=CTLFırça
 Comment[x-test]=xxCTLBrushxx
 ServiceTypes=Krita/ViewPlugin
 Type=Service
