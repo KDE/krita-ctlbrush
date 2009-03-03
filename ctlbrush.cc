@@ -30,9 +30,7 @@
 
 #include <KoDockFactory.h>
 
-#include "kis_config.h"
 #include "kis_cursor.h"
-#include "kis_global.h"
 #include "kis_types.h"
 #include "kis_view2.h"
 
